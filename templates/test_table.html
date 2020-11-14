@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="table-responsive">
+        <h1>json</h1>
+        <table class="table table-bordered table-striped" id="realtime_table">
+            <tr>
+                <th>product_key</th>
+                <th>machine_code</th>
+                <th>machine_data</th>
+                <th>process_time</th>
+                <th>start_time</th>
+                <th>end_time</th>
+                <th>product_test</th>
+                <th>product_size_l</th>
+                <th>product_size_w</th>
+                <th>product_size_h</th>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
+
+$(document).ready(function () {
+    $.get({
+        url: '/get_data/',
+        success: function (point) {
+            data = point;
+        },
+    });
+
+    return data;
+});
+
+
+
+
+<script>
+    $(document).ready(function(){
+        $.getJSON("realtime. ", function(data){
+            var realtime_data = '';
+            $.each(data, function(key, value){
+                realtime_data += '<tr>';
+                realtime_data += '<td>'+value.product_key+'</td>';
+                realtime_data += '<td>'+value.machine_code+'</td>';
+                realtime_data += '<td>'+value.machine_data+'</td>';
+                realtime_data += '<td>'+value.process_time+'</td>';
+                realtime_data += '<td>'+value.start_time+'</td>';
+                realtime_data += '<td>'+value.end_time+'</td>';
+                realtime_data += '<td>'+value.product_size_l+'</td>';
+                realtime_data += '<td>'+value.product_size_w+'</td>';
+                realtime_data += '<td>'+value.product_size_h+'</td>';
+              });
+              $('#realtime_table').append(realtime_data);
+        });
+    });
+</script>
