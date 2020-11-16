@@ -7,9 +7,15 @@ import datamake
 from process import process_operate
 from database import quality_data_list, machine_data_list
 from SQL import MySQL_query
+import random
 app = Flask(__name__)
 
 app.count = 1
+
+@app.route('/test_gauge')
+def test_gauge():
+    return render_template('test_gauge.html')
+
 
 @app.route('/')
 def test():
@@ -241,8 +247,29 @@ def table_load():
     return render_template('table.html')
 
 
+@app.route('/ttt', methods=["GET", "POST"])
+def ttt():
+    return render_template('test_gauge_test.html')
+
+
+@app.route('/re_data', methods=["GET", "POST"])
+def re_data():
+    a = random.random() * 100
+    b = random.random() * 100
+    c = random.random() * 100
+    d = a * b * c / 10000
+    data = [time() * 1000, d, a, b, c]
+
+    response = make_response(json.dumps(data))
+
+    response.content_type = 'application/json'
+
+    return response
+
+
+
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5008, debug=True)
+    app.run('0.0.0.0', port=5040, debug=True)
 
 
 # @app.route('/OEE')
