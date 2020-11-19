@@ -1,10 +1,10 @@
 // charts = one minute
-let UPDATE = 10000;
+let UPDATE = 1000;
 
 $(document).ready(function() {
 	  var table = $('#coinTable').DataTable( {
              ajax: {
-                 url: "http://127.0.0.1:5008/realtime_table_OP10",
+                 url: "http://127.0.0.1:5129/realtime_table_OP10",
                  dataSrc: ''
              },
 		    colReorder: {
@@ -20,7 +20,6 @@ $(document).ready(function() {
                 {data : 'product_size_l'},
                 {data : 'product_size_w'},
                 {data : 'product_size_h'}
-
 		    ]
 	        } );
 
@@ -29,6 +28,6 @@ $(document).ready(function() {
 
 setInterval( function () {
   console.log('reload');
-    $('#coinTable').DataTable().ajax.reload();
-//    $('#coinTable').DataTable().ajax.reload(null, false);
+    //$('#coinTable').DataTable().ajax.reload();
+       $('#coinTable').DataTable().ajax.reload(null, true);
 }, UPDATE  );

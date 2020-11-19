@@ -22,7 +22,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
 
@@ -50,7 +50,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
     # op20 반제품
@@ -77,7 +77,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
     # op30 반제품
@@ -104,7 +104,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
 
@@ -132,7 +132,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
     # op50 반제품
@@ -159,7 +159,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
     # body 부품
@@ -186,7 +186,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
     # wavyfin 부품
@@ -213,7 +213,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
 
@@ -241,7 +241,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
     # pipe2 부품
@@ -268,7 +268,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
 
@@ -297,7 +297,7 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict
 
     # flange2 부품
@@ -324,5 +324,5 @@ class product_master():
         master_dict['product_target_h'] = product_target_h
 
         product_master_data.append(master_dict)
-        MySQL_query.insert_product_master(product_master_data)
+
         return master_dict

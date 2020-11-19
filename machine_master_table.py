@@ -19,7 +19,7 @@ class machine_master():
         master_dict['machine_data_code'] = machine_data_code
 
         machine_master_data.append(master_dict)
-        MySQL_query.insert_machine_master(machine_master_data)
+
         return master_dict
 
     def op20(self):
@@ -39,7 +39,7 @@ class machine_master():
         master_dict['machine_data_code'] = machine_data_code
 
         machine_master_data.append(master_dict)
-        MySQL_query.insert_machine_master(machine_master_data)
+
         return master_dict
 
     def op30(self):
@@ -59,7 +59,7 @@ class machine_master():
         master_dict['machine_data_code'] = machine_data_code
 
         machine_master_data.append(master_dict)
-        MySQL_query.insert_machine_master(machine_master_data)
+
         return master_dict
 
     def op40(self):
@@ -79,7 +79,7 @@ class machine_master():
         master_dict['machine_data_code'] = machine_data_code
 
         machine_master_data.append(master_dict)
-        MySQL_query.insert_machine_master(machine_master_data)
+
         return master_dict
 
     def op50(self):
@@ -99,7 +99,7 @@ class machine_master():
         master_dict['machine_data_code'] = machine_data_code
 
         machine_master_data.append(master_dict)
-        MySQL_query.insert_machine_master(machine_master_data)
+
         return master_dict
 
     def op60(self):
@@ -120,5 +120,4 @@ class machine_master():
 
         machine_master_data.append(master_dict)
 
-        MySQL_query.insert_machine_master(machine_master_data)
         return master_dict

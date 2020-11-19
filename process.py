@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 from machine import machine_operate
 from SQL import MySQL_query
-from predict_model import Predict
+#from predict_model import Predict
 
 class process_operate:
 
@@ -212,8 +212,8 @@ class process_operate:
         # op30 공정 실행 (W3P0)
         op30_data_P0 = machine_operate.op30(op20_data_list_P0)  # <- 앞공정 재공품 받아서 실행
 
-        pred = Predict.predict_quality(op10_data_P0, op20_data_P0, op30_data_P0)
-        print("P0 예측값 : " + str(pred))
+        #pred = Predict.predict_quality(op10_data_P0, op20_data_P0, op30_data_P0)
+        #print("P0 예측값 : " + str(pred))
 
         product_key_W3P0 = op30_data_P0['product_key']
 
@@ -338,8 +338,8 @@ class process_operate:
         # op30 공정 실행 (W3P1)
         op30_data_P1 = machine_operate.op30(op20_data_list_P1)  # <- 앞공정 재공품 받아서 실행
 
-        pred = Predict.predict_quality(op10_data_P1, op20_data_P1, op30_data_P1)
-        print("P1 예측값 : " + str(pred))
+        #pred = Predict.predict_quality(op10_data_P1, op20_data_P1, op30_data_P1)
+        #print("P1 예측값 : " + str(pred))
 
         product_key_W3P1 = op30_data_P1['product_key']
 
@@ -494,8 +494,8 @@ class process_operate:
         # op30 공정 실행 (W3P2)
         op30_data_P2 = machine_operate.op30(op20_data_list_P2)  # <- 앞공정 재공품 받아서 실행
 
-        pred = Predict.predict_quality(op10_data_P2, op20_data_P2, op30_data_P2)
-        print("P2 예측값 : " + str(pred))
+        #pred = Predict.predict_quality(op10_data_P2, op20_data_P2, op30_data_P2)
+        #print("P2 예측값 : " + str(pred))
 
         product_key_W3P2 = op30_data_P2['product_key']
 
@@ -735,8 +735,8 @@ class process_operate:
             op20_data = total_test_data.pop(0)
             op30_data = total_test_data.pop(1)
 
-            pred = Predict.predict_quality(op10_data, op20_data, op30_data)
-            print('P' + str(i-2) + ' 품질 예측값: ' + str(pred))
+            #pred = Predict.predict_quality(op10_data, op20_data, op30_data)
+            #print('P' + str(i-2) + ' 품질 예측값: ' + str(pred))
 
             print('6개 생산 완료!')
 

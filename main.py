@@ -5,17 +5,10 @@ import json
 import pymysql
 import datamake
 from process import process_operate
-from database import quality_data_list, machine_data_list
 from SQL import MySQL_query
-import random
 app = Flask(__name__)
 
-app.count = 1
-
-@app.route('/test_gauge')
-def test_gauge():
-    return render_template('test_gauge.html')
-
+app.count = 0
 
 @app.route('/')
 def test():
@@ -175,43 +168,6 @@ def live_Temperature_OP50():
     return response
 
 
-@app.route('/realtime_table_OP10')
-def realtime_table_OP10():
-    count = app.count
-    conn = pymysql.connect(host='127.0.0.1', user='root', password='data12345', db='projectdata', charset='utf8')
-
-    sql = '''
-                   SELECT machine.product_key, machine.machine_code, machine.machine_data, machine.process_time, machine.start_time, 
-                   machine.end_time, product_quality.product_test, product_quality.product_size_l, product_quality.product_size_w, product_quality.product_size_h
-                   FROM machine INNER JOIN product_quality
-                   ON  machine.product_key = product_quality.product_key
-                   WHERE machine.machine_code = 'OP10' order by end_time ASC LIMIT %s
-           ''' % (count)
-#order by end_time DESC LIMIT 5
-    cursor = conn.cursor()
-    cursor.execute(sql)
-    row = cursor.fetchall()
-    app.count += 1
-    data_list = []
-    for obj in row:
-        data_dic = {
-            'product_key': obj[0][-4:],
-            'machine_code': obj[1],
-            'machine_data': str(obj[2]),
-            'process_time': str(obj[3]),
-            'start_time': obj[4],
-            'end_time': obj[5],
-            'product_test': obj[6],
-            'product_size_l': str(obj[7]),
-            'product_size_w': str(obj[8]),
-            'product_size_h': str(obj[9])
-        }
-        data_list.append(data_dic)
-
-    conn.close()
-    return jsonify(data_list)
-
-
 @app.route('/Date')
 def Date():
     return render_template('Date.html')
@@ -229,7 +185,7 @@ def Predict():
 
 @app.route('/Analysis')
 def Analysis():
-    return render_template('Analysis.html')
+    return render_template('Analysis_OP10.html')
 
 
 @app.route('/Login')
@@ -242,34 +198,11 @@ def Signin():
     return render_template('Signin.html')
 
 
-@app.route('/table_load')
-def table_load():
-    return render_template('table.html')
-
-
-@app.route('/ttt', methods=["GET", "POST"])
-def ttt():
-    return render_template('test_gauge_test.html')
-
-
-@app.route('/re_data', methods=["GET", "POST"])
-def re_data():
-    a = random.random() * 100
-    b = random.random() * 100
-    c = random.random() * 100
-    d = a * b * c / 10000
-    data = [time() * 1000, d, a, b, c]
-
-    response = make_response(json.dumps(data))
-
-    response.content_type = 'application/json'
-
-    return response
 
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5040, debug=True)
+    app.run('0.0.0.0', port=5008, debug=True)
 
 
 # @app.route('/OEE')
@@ -513,7 +446,7 @@ if __name__ == '__main__':
 # @app.route('/home')
 # def home():
 #     return render_template('Home_index.html')
-#     #return render_template('home.html')
+#     #return render_template('Home.html')
 #
 #
 # @app.route('/')
