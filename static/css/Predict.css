@@ -19,7 +19,6 @@ body {
   font-family: "Source Sans Pro";
 }
 main {
-  background-image: url('/static/img/background.jpg');
   font-family: "Source Sans Pro";
 }
 
@@ -125,15 +124,13 @@ a {
 }
 
 #AA {
-  background-image: url("background.jpg");
-  height: 555px;
+  height: 455px;
   width: 1515px;
   float: left;
   color: black;
   box-sizing: 800px 400px;
 }
 #BB {
-  background-image: url("background.jpg");
   width: 1515px;
   height: 560px;
   color: black;
@@ -152,6 +149,7 @@ a {
   text-align: center;
   width: 100%;
   max-width: 1000px;
+  font-size: 15px;
 }
 #example-table caption {
   font-size: 20px;
@@ -192,6 +190,7 @@ a {
   text-align: center;
   width: 100%;
   max-width: 1000px;
+  font-size: 15px;
 }
 #example-table1 caption {
   font-size: 20px;
@@ -211,4 +210,7 @@ a {
 }
 #example-table1 tr:hover {
   background: #f1f7ff;
+}
+#Siz {
+  font-size: 25px;
 }

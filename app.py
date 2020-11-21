@@ -365,11 +365,17 @@ def Pareto():
     count_list.append(count_OP40)
     count_list.append(count_OP50)
 
-    data = [time() * 1000, count_list]
-    response = make_response(json.dumps(data))
+    data1 = [count_OP10]
+    data2 = [count_OP20]
+    data3 = [count_OP30]
+    data4 = [count_OP40]
+    data5 = [count_OP50]
+    print(count_list)
+    data_list = [data1, data2, data3, data4, data5]
+    response = make_response(json.dumps(count_list))
     response.content_type = 'application/json'
-    return response
-    #return jsonify(count_list)
+    # return response
+    return jsonify(count_list)
 
 
 @app.route('/chart_test')
@@ -380,6 +386,11 @@ def chart_test():
 @app.route('/Pareto_chart')
 def Pareto_chart():
     return render_template('Pareto.html')
+
+@app.route('/bar_chart_test')
+def bar_chart_test():
+    return render_template('bar_chart_test.html')
+
 
 @app.route('/Login')
 def Login():
@@ -392,4 +403,4 @@ def Signin():
 
 
 if __name__ == '__main__':
-   app.run('0.0.0.0', port=5215, debug=True)
+   app.run('0.0.0.0', port=5324, debug=True)

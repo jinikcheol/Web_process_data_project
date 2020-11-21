@@ -20,17 +20,18 @@
 //            console.log(data1)
 //        });
 //    }, 5000);
-//function requestData() {
-//    var requests = $.get('/Pareto');  // $. <- 제이쿼리,
-//        var tm = requests.done(function(result) // 성공하면 result 값을 받아옴
-//            {
-//                var data1= []; // [[[ ]]]  [[ ]]
-//                data1.push(result);  // 값 업데이트
-//                console.log(data1)
-//                setTimeout(requestData, 10000);
-//            });
-//        cache: false
-//}
+var data1= [];
+function requestData() {
+    var requests = $.get('/Pareto');  // $. <- 제이쿼리,
+        var tm = requests.done(function(result) // 성공하면 result 값을 받아옴
+            {
+
+                data1.push(result);  // 값 업데이트
+                console.log(data1[0])
+                setTimeout(requestData, 10000);
+            });
+        cache: false
+}
 //var chart;
 //var data2 = [];
 //function requestData() {
@@ -46,9 +47,6 @@
 //    });
 //}
 var chart;
-var data = [];
-//$(document).ready(function() {
-//    chart = new
 $(document).ready(function() {
     chart = Highcharts.chart('container4', {
         chart: {
@@ -102,32 +100,12 @@ $(document).ready(function() {
             type: 'column',
             zIndex: 2,
             yAxis: 'y_axis_0',
-            data: []
-
+            data: data1
         }]
+         });
     });
-});
+
 //--------------------------------------------------------------------------------
-
-function requestData() {
-    // Speed
-    var requests = $.get('/Pareto');  // $. <- 제이쿼리,
-        var tm = requests.done(function (result) // 성공하면 result 값을 받아옴
-            {
-                var data1=[];
-                // Add the Point
-                // Time Temperature\
-                data1.push(result[1]);  // 값 업데이트
-                //data1.push(result[1]);  // 첫번째 데이터
-                console.log(data1)
-                console.log(data)
-//            if (chart) {
-//                point = chart.series[0].points[0];
-//                inc = data1[0];
-
-    });
-     setTimeout(requestData, 5000);
-};
 
 //---------------------------------------------------------------------------------
 //function createHighCharts(data){
