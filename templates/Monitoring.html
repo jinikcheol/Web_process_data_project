@@ -21,7 +21,7 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/Monitoring.css') }}" />
-    <script src="/static/js/gauge.js" defer></script>
+    <script src="/static/js/OEE.js" defer></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
@@ -52,8 +52,8 @@
       <ul class="navbar__menu">
         <li><a href="Monitoring">MONITORING</a></li>
         <li><a href="Machine">MACHINE</a></li>
-        <li><a href="Date">DATE</a></li>
-        <li><a href="Item">ITEM</a></li>
+        <li><a href="Quality">QUALITY</a></li>
+        <li><a href="Search">SEARCH</a></li>
         <li><a href="Analysis_OP10">ANALYSIS</a></li>
         <li><a href="Predict">PREDICT</a></li>
       </ul>
@@ -80,10 +80,11 @@
  <div id="B">
     <p id="bb">&nbsp;&nbsp;&nbsp;공정 흐름도</p>
     <video id="bbbb" muted autoplay loop>
-      <source id="dddd" src="/static/img/Video.mp4" type="video/mp4">
+      <source id="dddd" src="/static/img/Video8.mp4" type="video/mp4">
     </video>
   </div>
   <div id="CC">
+    <br>
     <!--실시간 데이터 송출-->
     <p id="생산물품">생산물품</p>
     <div id="DD"><p id=EGR>EGR 쿨러</p></div>
@@ -110,4 +111,4 @@
   <script src="/static/js/export-data.js"></script>
   <script src="/static/js/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-  <script src="/static/js/gauge.js"></script>
+  <script src="/static/js/OEE.js"></script>

@@ -8,12 +8,12 @@ app = Flask(__name__)
 
 app.secret_key = "DayTory123"
 
-db = pymysql.connect(host='127.0.0.1', user='root', password='1234', db='test', charset='utf8')
+db = pymysql.connect(host='127.0.0.1', user='root', password='data12345', db='mydb', charset='utf8')
 
 cursor = db.cursor()
 
 @app.route('/Home') ###로그인 하고 들어가는 메인 페이지를 넣을 것
-def mmain():
+def Home():
     if not 'ID' in session:
         return ''' <script> location.href = "http://127.0.0.1:5002/" </script> '''
     else:
@@ -25,7 +25,7 @@ def index():
     if 'ID' in session:
         return ''' <script> location.href = "http://127.0.0.1:5002/Home" </script> '''
     else:
-        return render_template('index.html')  # 로그인 되어 있지 않으니 로그인 홈 가기 버튼으로
+        return render_template('Daytory.html')  # 로그인 되어 있지 않으니 로그인 홈 가기 버튼으로
 
 
 app.cnt = 1
@@ -77,6 +77,7 @@ def logout():
     location.href = "http://127.0.0.1:5002/logo" </script> ''' % escape(session['ID'])
 
 #이 두개를 한번에 붙이지 않은 이유는 session pop 한 후에는 ID가 없어서 escape기능을 못하기에
+
 @app.route('/logo')
 def logo():
     session.pop('ID', None)

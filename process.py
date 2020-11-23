@@ -5,7 +5,7 @@ from machine import machine_operate
 from SQL import MySQL_query
 #from predict_model import Predict
 
-class process_operate:
+class process_operate1:
 
     def process_start(amount):
         std = 0.0025  # 표준편차

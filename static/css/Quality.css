@@ -127,8 +127,10 @@ a {
   width: 1515px;
 }
 #BB {
-  height: 400px;
+  height: 600px;
   width: 1515px;
+  float: center;
+
 }
 
 /*#CC {
