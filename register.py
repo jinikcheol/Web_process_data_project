@@ -56,7 +56,7 @@ def login():
                             location.href = "http://127.0.0.1:5002/login" </script> '''
         if row_count > 0:
             user_info = cursor.fetchone()
-            pw_db = user_info[2]
+            pw_db = user_info[1]
 
             is_pw = bcrypt.checkpw(password.encode('UTF-8'),  pw_db.encode('UTF-8'))
             if is_pw:

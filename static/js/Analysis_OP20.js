@@ -34,6 +34,9 @@ startOnTick: true,
 endOnTick: true,
 showLastLabel: true,
 },
+credits: {
+            enabled: false,
+        },
 yAxis: {
 title: {
   text: "Length (mm)",
@@ -81,6 +84,9 @@ Highcharts.chart("container2", {
   subtitle: {
     text: "",
   },
+  credits: {
+            enabled: false,
+        },
   xAxis: {
     gridLineWidth: 1,
     title: {
@@ -106,7 +112,7 @@ Highcharts.chart("container2", {
       name: "Observations",
       type: "scatter",
       color: "blue",
-      data: data2[0]
+      data: data3[0]
     },
   ],
   tooltip: {
@@ -138,6 +144,9 @@ Highcharts.chart("container3", {
   subtitle: {
     text: "",
   },
+  credits: {
+            enabled: false,
+        },
   xAxis: {
     gridLineWidth: 1,
     title: {
@@ -163,7 +172,7 @@ Highcharts.chart("container3", {
       name: "Observations",
       type: "scatter",
       color: "yellow",
-      data: data3[0]
+      data: data2[0]
     },
   ],
   tooltip: {

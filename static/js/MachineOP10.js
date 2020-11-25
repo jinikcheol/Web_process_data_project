@@ -37,6 +37,9 @@ $(document).ready(function() {
         title: {
             text: 'Realtime Electronic OP10'
         },
+        credits: {
+            enabled: false,
+        },
         xAxis: {
             type: 'datetime',
             tickPixelInterval: 150,

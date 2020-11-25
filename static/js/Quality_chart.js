@@ -2,11 +2,14 @@ Highcharts.chart('container', {
   data: {
     table: 'datatable'
   },
+  credits: {
+            enabled: false,
+        },
   chart: {
     type: 'column'
   },
   title: {
-    text: 'product Quality'
+    text: 'Product Quality'
   },
   yAxis: {
     allowDecimals: false,

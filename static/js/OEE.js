@@ -73,7 +73,7 @@ var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptio
 
     series: [{
         name: 'Speed',
-        data: [80],
+        data: [0],
         dataLabels: {
             format:
                 '<div style="text-align:center">' +
@@ -97,10 +97,12 @@ var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, 
             text: 'Availability'
         }
     },
-
+    credits: {
+            enabled: false
+            },
     series: [{
         name: 'RPM',
-        data: [1],
+        data: [0],
         dataLabels: {
             format:
                 '<div style="text-align:center">' +
@@ -125,10 +127,12 @@ var chart1 = Highcharts.chart('container-1', Highcharts.merge(gaugeOptions, {
             text: 'Productivity'
         }
     },
-
+    credits: {
+            enabled: false
+            },
     series: [{
         name: 'RPM',
-        data: [1],
+        data: [0],
         dataLabels: {
             format:
                 '<div style="text-align:center">' +
@@ -153,10 +157,12 @@ var chart2 = Highcharts.chart('container-2', Highcharts.merge(gaugeOptions, {
             text: 'Quality'
         }
     },
-
+    credits: {
+            enabled: false
+            },
     series: [{
         name: 'RPM',
-        data: [1],
+        data: [0],
         dataLabels: {
             format:
                 '<div style="text-align:center">' +

@@ -27,6 +27,9 @@ Highcharts.chart('container4', {
         ],
         crosshair: true
     },
+    credits: {
+            enabled: false,
+        },
     yAxis: [{
         title: {
             text: ''

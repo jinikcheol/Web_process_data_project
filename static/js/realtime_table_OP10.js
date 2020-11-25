@@ -4,9 +4,11 @@ let UPDATE = 10000;
 $(document).ready(function() {
 	  var table = $('#coinTable').DataTable( {
              ajax: {
-                 url: "http://127.0.0.1:5118/realtime_table_OP10",
+                 url: "http://127.0.0.1:5000/realtime_table_OP10",
                  dataSrc: ''
              },
+             lengthChange: false,
+             order: [ [ 1, "asc" ] ],
 		    colReorder: {
 			realtime: true
 		    },
