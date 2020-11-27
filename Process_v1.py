@@ -1,6 +1,6 @@
 import numpy as np
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from machine import machine_operate
 from SQL import MySQL_query
 from predict_model import Predict
@@ -61,7 +61,7 @@ class process_operate:
         op10_process_time_P0 = round(op10_process_time_P0, 5)
 
         body_P0.append(op10_process_time_P0)
-        body_P0.append(datetime.now())  # 첫번째 제품은 현재시간부터 시작한다고 가정
+        body_P0.append(datetime.now() + timedelta(hours=9))  # 첫번째 제품은 현재시간부터 시작한다고 가정
 
         print('한개 생산 중')
         time.sleep(10)  # 10초 텀
@@ -89,7 +89,7 @@ class process_operate:
 
         op20_product_key_P0 = '-' + 'W2' + 'P' + str(n)  # 제품 키 생성
 
-        op20_start_time_P0 = datetime.now()
+        op20_start_time_P0 = datetime.now() + timedelta(hours=9)
 
         op10_data_list_P0.append(op20_product_key_P0)  # 2번째 제품 키 - 인덱스 0번
         op10_data_list_P0.append(op10_l_P0)  # 1번 - 길이
@@ -122,7 +122,7 @@ class process_operate:
 
 
         body_P1.append(op10_process_time_P1)
-        body_P1.append(datetime.now())
+        body_P1.append(datetime.now() + timedelta(hours=9))
 
         print('두개 생산 중')
         time.sleep(10)  # 10초 텀
@@ -162,7 +162,7 @@ class process_operate:
         op30_process_time_P0 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op30_process_time_P0 = round(op30_process_time_P0, 5)
 
-        op30_start_time_P0 = datetime.now()
+        op30_start_time_P0 = datetime.now() + timedelta(hours=9)
 
         op20_data_list_P0.append(product_key_W3P0)
         op20_data_list_P0.append(op20_l_P0)
@@ -185,7 +185,7 @@ class process_operate:
         op20_process_time_P1 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op20_process_time_P1 = round(op20_process_time_P1, 5)
 
-        op20_start_time_P1 = datetime.now()
+        op20_start_time_P1 = datetime.now() + timedelta(hours=9)
 
         op10_data_list_P1.append(product_key_W2P1)
         op10_data_list_P1.append(op10_l_P1)
@@ -216,7 +216,7 @@ class process_operate:
         op10_process_time_P2 = round(op10_process_time_P2, 5)
 
         body_P2.append(op10_process_time_P2)
-        body_P2.append(datetime.now())  # 세번째 제품은 P1 끝난시간부터 시작
+        body_P2.append(datetime.now() + timedelta(hours=9))  # 세번째 제품은 P1 끝난시간부터 시작
 
 
 
@@ -270,7 +270,7 @@ class process_operate:
         op40_process_time_P0 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op40_process_time_P0 = round(op40_process_time_P0, 5)
 
-        op40_start_time_P0 = datetime.now()
+        op40_start_time_P0 = datetime.now() + timedelta(hours=9)
 
         op30_data_list_P0.append(product_key_W4P0)
         op30_data_list_P0.append(op30_l_P0)
@@ -290,7 +290,7 @@ class process_operate:
         op30_process_time_P1 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op30_process_time_P1 = round(op30_process_time_P1, 5)
 
-        op30_start_time_P1 = datetime.now()
+        op30_start_time_P1 = datetime.now() + timedelta(hours=9)
 
         op20_data_list_P1.append(product_key_W3P1)
         op20_data_list_P1.append(op20_l_P1)
@@ -311,7 +311,7 @@ class process_operate:
         op20_process_time_P2 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op20_process_time_P2 = round(op20_process_time_P2, 5)
 
-        op20_start_time_P2 = datetime.now()
+        op20_start_time_P2 = datetime.now() + timedelta(hours=9)
 
         op10_data_list_P2.append(product_key_W2P2)
         op10_data_list_P2.append(op10_l_P2)
@@ -342,7 +342,7 @@ class process_operate:
         op10_process_time_P2 = round(op10_process_time_P2, 5)
 
         body_P3.append(op10_process_time_P2)
-        body_P3.append(datetime.now())
+        body_P3.append(datetime.now() + timedelta(hours=9))
 
         print('네개 생산 중')
         time.sleep(10)
@@ -402,7 +402,7 @@ class process_operate:
         op50_process_time_P0 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op50_process_time_P0 = round(op50_process_time_P0, 5)
 
-        op50_start_time_P0 = datetime.now()
+        op50_start_time_P0 = datetime.now() + timedelta(hours=9)
 
         op40_data_list_P0.append(product_key_W5P0)
         op40_data_list_P0.append(op40_l_P0)
@@ -424,7 +424,7 @@ class process_operate:
         op40_process_time_P1 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op40_process_time_P1 = round(op40_process_time_P1, 5)
 
-        op40_start_time_P1 = datetime.now()
+        op40_start_time_P1 = datetime.now() + timedelta(hours=9)
 
         op30_data_list_P1.append(product_key_W4P1)
         op30_data_list_P1.append(op30_l_P1)
@@ -444,7 +444,7 @@ class process_operate:
         op30_process_time_P2 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op30_process_time_P2 = round(op30_process_time_P2, 5)
 
-        op30_start_time_P2 = datetime.now()
+        op30_start_time_P2 = datetime.now() + timedelta(hours=9)
 
         op20_data_list_P2.append(product_key_W3P2)
         op20_data_list_P2.append(op20_l_P2)
@@ -464,7 +464,7 @@ class process_operate:
         op20_process_time_P3 = np.random.triangular(9, 10, 10)  # 다음 공정에 넣어줄 process_time
         op20_process_time_P3 = round(op20_process_time_P3, 5)
 
-        op20_start_time_P3 = datetime.now()
+        op20_start_time_P3 = datetime.now() + timedelta(hours=9)
 
         op10_data_list_P3.append(product_key_W2P3)
         op10_data_list_P3.append(op10_l_P3)
@@ -494,7 +494,7 @@ class process_operate:
         op10_process_time_P3 = round(op10_process_time_P3, 5)
 
         body_P4.append(op10_process_time_P3)
-        body_P4.append(datetime.now())  # 다섯 번째 제품은 P3 끝난시간부터 시작
+        body_P4.append(datetime.now() + timedelta(hours=9))  # 다섯 번째 제품은 P3 끝난시간부터 시작
 
         print('다섯개 생산 중')
         time.sleep(10)
@@ -639,7 +639,7 @@ class process_operate:
                 op10_WIP.append(op20_process_time)
                 op10_WIP.append(op20_start_time)
 
-                op10_time_stamp = datetime.now()
+                op10_time_stamp = datetime.now() + timedelta(hours=9)
 
             else:  # 한바퀴 돌고 난 다음
                 op50_WIP = []
@@ -730,7 +730,7 @@ class process_operate:
             body_h = np.random.normal(50, std)  # body 치수 데이터 생성
             body_h = round(body_h, 5)
 
-            op10_time_stamp = datetime.now()
+            op10_time_stamp = datetime.now() + timedelta(hours=9)
 
             body.append(product_key_W1)
             body.append(body_l)
